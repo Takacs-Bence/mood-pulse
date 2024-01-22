@@ -22,4 +22,12 @@ public class User {
     public void setCommunity(String community) {
         this.community = community;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", community='" + community + '\'' +
+                '}';
+    }
 }

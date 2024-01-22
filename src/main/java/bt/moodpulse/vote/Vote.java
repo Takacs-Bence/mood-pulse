@@ -35,4 +35,13 @@ public class Vote {
     public void setVoter(User voter) {
         this.voter = voter;
     }
+
+    @Override
+    public String toString() {
+        return "Vote{" +
+                "id=" + id +
+                ", mood=" + mood +
+                ", voter=" + voter +
+                '}';
+    }
 }
