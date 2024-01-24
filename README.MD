@@ -21,5 +21,5 @@ Daily poll for your mood in your community.
    "id": "4734f7f1-31ee-4d28-963b-10dab763aa02",
    "community": "example-community"
    }
-   }' http://localhost:8080/vote
+   }' http://localhost:8080/submissions/vote
 ```
