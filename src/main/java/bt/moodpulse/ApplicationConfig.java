@@ -3,7 +3,7 @@ package bt.moodpulse;
 import bt.moodpulse.vote.persistence.LocalVoteRepository;
 import bt.moodpulse.vote.process.VoteProcessorService;
 import bt.moodpulse.vote.process.VoteQueueService;
-import bt.moodpulse.vote.result.VoteResult;
+import bt.moodpulse.vote.result.VoteResultService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -16,8 +16,8 @@ public class ApplicationConfig {
     }
 
     @Bean
-    public VoteProcessorService voteProcessorService(VoteQueueService voteQueueService, VoteResult voteResult) {
-        VoteProcessorService voteProcessorService = new VoteProcessorService(voteQueueService, voteResult);
+    public VoteProcessorService voteProcessorService(VoteQueueService voteQueueService, VoteResultService voteResultService) {
+        VoteProcessorService voteProcessorService = new VoteProcessorService(voteQueueService, voteResultService);
         voteProcessorService.start();
         return voteProcessorService;
     }

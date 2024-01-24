@@ -6,21 +6,25 @@ public class VoteCount {
 
     private final AtomicLong positiveAnswers = new AtomicLong();
     private final AtomicLong negativeAnswers = new AtomicLong();
+    private final AtomicLong invalidAnswers = new AtomicLong();
+
+
+    public VoteCount() {
+        this.positiveAnswers.set(0);
+        this.negativeAnswers.set(0);
+        this.invalidAnswers.set(0);
+    }
 
     public AtomicLong getPositiveAnswers() {
         return positiveAnswers;
-    }
-
-    public void setPositiveAnswers(Long positiveAnswers) {
-        this.positiveAnswers.set(positiveAnswers);
     }
 
     public AtomicLong getNegativeAnswers() {
         return negativeAnswers;
     }
 
-    public void setNegativeAnswers(Long negativeAnswers) {
-        this.negativeAnswers.set(negativeAnswers);
+    public AtomicLong getInvalidAnswers() {
+        return invalidAnswers;
     }
 
     public void incrementPositiveAnswers() {
@@ -29,5 +33,9 @@ public class VoteCount {
 
     public void incrementNegativeAnswers() {
         this.negativeAnswers.getAndIncrement();
+    }
+
+    public void incrementInvalidAnswers() {
+        this.invalidAnswers.getAndIncrement();
     }
 }
