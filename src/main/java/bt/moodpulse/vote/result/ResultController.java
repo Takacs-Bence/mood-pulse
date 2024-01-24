@@ -15,7 +15,7 @@ public class ResultController {
         this.resultPresenterService = resultPresenterService;
     }
 
-    @GetMapping("/community")
+    @GetMapping("/community/{community}")
     public Result getResultByCommunity(@PathVariable String community) {
         return resultPresenterService.presentResult(community);
     }

@@ -2,7 +2,7 @@
 
 Daily poll for your mood in your community.
 
-## How to use
+## How to run
 
 1. Compile the project
 
@@ -23,3 +23,24 @@ Daily poll for your mood in your community.
    }
    }' http://localhost:8080/submissions/vote
 ```
+
+## How to use
+
+The functionality is mostly in-memory at the moment, between server start and stop you can do the following:
+
+1. Submit some votes as stated in the 'How to run' section
+
+2. Check the election result by communities
+
+```
+curl -X GET \
+  http://localhost:8080/result/community/example
+```
+
+The result JSON looks like this:
+
+```
+{"community":"example","positiveVotePercentage":0.50,"negativeVotePercentage":0.50,"invalidVotePercentage":0.00,"allVotePercentage":2}
+```
+
+which informs you, that with the total of 2 votes, none invalid and the yes and no answers were equally distributed (50-50%).

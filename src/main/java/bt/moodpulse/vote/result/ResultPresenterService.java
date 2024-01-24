@@ -3,6 +3,7 @@ package bt.moodpulse.vote.result;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 @Service
 public class ResultPresenterService {
@@ -17,7 +18,7 @@ public class ResultPresenterService {
         VoteCount voteCount = voteResultService.getVoteCountByCommunity(community);
 
         if (voteCount == null) {
-            return new Result(community, null,null,null, null);
+            return new Result(community, null, null, null, null);
         }
 
         BigDecimal invalidAnswers = new BigDecimal(voteCount.getInvalidAnswers().get());
@@ -26,6 +27,9 @@ public class ResultPresenterService {
 
         BigDecimal allAnswers = invalidAnswers.add(positiveAnswers).add(negativeAnswers);
 
-        return new Result(community, allAnswers, positiveAnswers.divide(allAnswers), negativeAnswers.divide(allAnswers), invalidAnswers.divide(allAnswers));
+        return new Result(community, allAnswers,
+                positiveAnswers.divide(allAnswers, 2, RoundingMode.HALF_UP),
+                negativeAnswers.divide(allAnswers, 2, RoundingMode.HALF_UP),
+                invalidAnswers.divide(allAnswers, 2, RoundingMode.HALF_UP));
     }
 }

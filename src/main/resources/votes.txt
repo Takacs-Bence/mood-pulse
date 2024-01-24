@@ -1,3 +1,12 @@
 
 {"id":"91598997-5c12-4721-aa38-80f4fa411b32","mood":false,"voter":{"id":"4724f7f1-31ee-4d28-963b-10dab763aa02","community":"community"}}
 {"id":"81598997-5c12-4721-aa38-80f4fa411b32","mood":false,"voter":{"id":"2724f7f1-31ee-4e28-963b-10dab763aa02","community":"example-community"}}
+{"id":"81598997-5c12-4721-aa38-80f4fa411b32","mood":false,"voter":{"id":"2724f7f1-31ee-4e28-963b-10dab763aa02","community":"example-community"}}
+{"id":"81598997-5c12-4721-aa38-80f4fa411b32","mood":true,"voter":{"id":"2724f7f1-31ee-4e28-963b-10dab763aa02","community":"example-community"}}
+{"id":"91599997-5c12-4721-aa38-80f4fa411b32","mood":true,"voter":{"id":"4734f7f1-31ee-4d28-963b-10dab763aa02","community":"example-community"}}
+{"id":"91599297-5c12-4721-aa38-80f4fa411b32","mood":false,"voter":{"id":"4734f7f1-31ee-4d28-963b-10dab763aa02","community":"example-community"}}
+{"id":"91599297-5c12-4721-aa38-80f4fa411b32","mood":false,"voter":{"id":"4734f7f1-31ee-4d28-963b-10dab763aa02","community":"example"}}
+{"id":"91592297-5c12-4721-aa38-80f4fa411b32","mood":true,"voter":{"id":"473427f1-31ee-4d28-963b-10dab763aa02","community":"example"}}
+{"id":"92592297-5c12-4721-aa38-80f4fa411b32","mood":true,"voter":{"id":"423427f1-31ee-4d28-963b-10dab763aa02","community":"example"}}
+{"id":"91599297-5c12-4721-aa38-80f4fa411b32","mood":false,"voter":{"id":"4734f7f1-31ee-4d28-963b-10dab763aa02","community":"example"}}
+{"id":"92592297-5c12-4721-aa38-80f4fa411b32","mood":true,"voter":{"id":"423427f1-31ee-4d28-963b-10dab763aa02","community":"example"}}

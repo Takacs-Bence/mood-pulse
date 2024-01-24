@@ -5,49 +5,44 @@ import bt.moodpulse.vote.Vote;
 import bt.moodpulse.vote.result.VoteResultService;
 import org.springframework.stereotype.Service;
 
-import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 @Service
 public class VoteProcessorService {
 
     private final VoteQueueService voteQueueService;
     private final VoteResultService voteResultService;
-    private final AtomicBoolean processing;
+
+    private final ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
 
     public VoteProcessorService(VoteQueueService voteQueueService, VoteResultService voteResultService) {
         this.voteQueueService = voteQueueService;
         this.voteResultService = voteResultService;
-        this.processing = new AtomicBoolean(false);
     }
 
     public void start() {
-        stop();
-        this.processing.set(true);
-        process();
+        executorService.scheduleAtFixedRate(this::process, 100, 50, TimeUnit.MILLISECONDS);
     }
 
     public void stop() {
-        this.processing.set(false);
+        if (!executorService.isShutdown()) {
+            executorService.shutdown();
+        }
     }
 
     private void process() {
-        while (processing.get()) {
-            Vote vote = voteQueueService.poll();
-            if (vote != null) {
-                String community = getCommunity(vote);
-                boolean valid = validateVote(vote);
+        Vote vote = voteQueueService.poll();
+        if (vote != null) {
+            String community = getCommunity(vote);
+            boolean valid = validateVote(vote);
 
-                if (valid) {
-                    voteResultService.countVote(community, vote.isMood());
-                } else {
-                    voteResultService.countVote(community, null);
-                }
+            if (valid) {
+                voteResultService.countVote(community, vote.isMood());
+            } else {
+                voteResultService.countVote(community, null);
             }
-        }
-        try {
-            Thread.sleep(50);
-        } catch (InterruptedException e) {
-            // ignore for now
         }
     }
 
