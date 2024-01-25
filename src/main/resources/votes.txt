@@ -10,3 +10,7 @@
 {"id":"92592297-5c12-4721-aa38-80f4fa411b32","mood":true,"voter":{"id":"423427f1-31ee-4d28-963b-10dab763aa02","community":"example"}}
 {"id":"91599297-5c12-4721-aa38-80f4fa411b32","mood":false,"voter":{"id":"4734f7f1-31ee-4d28-963b-10dab763aa02","community":"example"}}
 {"id":"92592297-5c12-4721-aa38-80f4fa411b32","mood":true,"voter":{"id":"423427f1-31ee-4d28-963b-10dab763aa02","community":"example"}}
+{"mood":false}
+{"id":"9ca4b276-5c75-4b3a-af4a-bdd2b0c1721a","mood":true,"voter":{"id":"6e2a1498-1bc9-40fd-8e6b-6f29448098fd","community":"example"}}
+{"id":"bc429812-9054-4437-bfb8-67d1d8dabdfe","mood":true,"voter":{"id":"76a438c0-bb28-4f3a-ad59-17a1adaef98e","community":"example"}}
+{"id":"cb880903-3b16-462d-be52-a4cec5b35959","mood":false,"voter":{"id":"324ab412-2cf2-4577-8400-97786f6179ec","community":"example"}}
