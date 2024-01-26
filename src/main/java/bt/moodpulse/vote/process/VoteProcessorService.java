@@ -23,7 +23,7 @@ public class VoteProcessorService {
     }
 
     public void start() {
-        executorService.scheduleAtFixedRate(this::process, 100, 50, TimeUnit.MILLISECONDS);
+        executorService.scheduleAtFixedRate(this::process, 100, 4, TimeUnit.MILLISECONDS);
     }
 
     public void stop() {
