@@ -28,13 +28,14 @@ Daily poll for your mood in your community.
 
 ### via browser
 
-1. Have npm installed. Run npm build run && npm start in the ./frontend dir.
+1. Have npm installed. Navigate to the ./frontend dir.
 
 2. Execute the command 'npm run build && npm start'
 
-3. Open localhost:3000
+3. Open http://localhost:3000
 
 You can vote and be shown the results immediately for your community. After one vote, voting is disabled. You can delete the hasVote key-value from your local storage to be able to vote again.
+The ability to add/detect community is to come.
 
 ### via CLI
 
